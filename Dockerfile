@@ -8,7 +8,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Set environment variables
-ENV PORT="8081"
+ENV PORT="8080"
  
 # Expose correct port
 # EXPOSE 8081
