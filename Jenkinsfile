@@ -8,5 +8,13 @@ pipeline {
                 '''
             }
         }
+        stage('build docker image') {
+            steps {
+                sh '''
+                docker build -t maxflask:latest .
+                docker build -t maxflask:{BUILD_NUMBER} .
+                '''
+            }
+        }
     }
 }
