@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh '''
                 docker build -t maxflask:latest .
-                docker build -t maxflask:{BUILD_NUMBER} .
+                docker build -t maxflask:${BUILD_NUMBER} .
                 '''
             }
         }
