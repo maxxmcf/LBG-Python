@@ -17,6 +17,17 @@ pipeline {
                 '''
             }
         }
+
+        stage('run my app') {
+            steps {
+                sh '''
+                ssh -i "~/.ssh/id_rsa" jenkins@10.154.0.28 << EOF
+                docker stop max-app && (docker rm max-app) || (docker rm max-app && sleep 1 || sleep 1)
+                docker run -d -p 80:8081 --name max-app maxmcf13/maxflask
+                '''
+            }
+        }
+
         stage('execute tests') {
             steps {
                 sh '''
