@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt
 ENV PORT="8081"
  
 # Expose correct port
-#EXPOSE 8081
+# EXPOSE 8081
 
 # Create an entrypoint - lbg.py
-ENTRYPOINT python lbg.py --PORT${PORT}
+ENTRYPOINT python lbg.py --PORT ${PORT}
