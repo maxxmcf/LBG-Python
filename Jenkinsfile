@@ -31,5 +31,13 @@ pipeline {
             }
         }
 
+        stage('execute tests') {
+            steps {
+                sh '''
+                pip3 install -r requirements.txt
+                python3 lbg.test.py
+                '''
+            }
+        }
     }
 }
