@@ -10,7 +10,10 @@ pipeline {
         }
         stage('execute tests') {
             steps {
-                sh 'python lbg.test.py'
+                sh '''
+                python --version
+                python lbg.test.py
+                '''
             }
         }
         stage('build docker image') {
