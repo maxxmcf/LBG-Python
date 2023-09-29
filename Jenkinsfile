@@ -8,6 +8,13 @@ pipeline {
                 '''
             }
         }
+        stage('execute tests') {
+            steps {
+                sh '''
+                python lbg.test.py
+                '''
+            }
+        }
         stage('build docker image') {
             steps {
                 sh '''
