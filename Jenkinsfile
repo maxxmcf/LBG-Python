@@ -4,7 +4,7 @@ pipeline {
         stage('welcome') {
             steps {
                 sh '''
-                echo "hi there - welcome to the pipeline"
+                echo "hi there - welcome to the pipeline via webhook!"
                 '''
             }
         }
