@@ -8,19 +8,19 @@ pipeline {
                 '''
             }
         }
-        stage('execute tests') {
-            steps {
-                sh '''
-                pip3 install -r requirements.txt
-                python3 lbg.test.py
-                '''
-            }
-        }
+
         stage('build docker image') {
             steps {
                 sh '''
                 docker build -t maxflask:latest .
                 docker build -t maxflask:${BUILD_NUMBER} .
+                '''
+            }
+        }
+        stage('execute tests') {
+            steps {
+                sh '''
+                python3 lbg.test.py
                 '''
             }
         }
