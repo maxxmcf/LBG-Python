@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt
 #ENV PASSWORD="strongpword"
  
 # Expose correct port
-#EXPOSE 5000
+EXPOSE 8081
 
 # Create an entrypoint - lbg.py
 ENTRYPOINT ["python", "lbg.py"]
