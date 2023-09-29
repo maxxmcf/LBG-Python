@@ -1,6 +1,7 @@
 pipeline {
     agent any
-    stages {
+    stages 
+    if(env.BRANCH_NAME == 'master'){
         stage('welcome') {
             steps {
                 sh '''
@@ -11,6 +12,7 @@ pipeline {
         stage('execute tests') {
             steps {
                 sh '''
+                
                 python lbg.test.py
                 '''
             }
