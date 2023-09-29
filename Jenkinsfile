@@ -31,10 +31,11 @@ pipeline {
             }
         }
 
-        stage('execute tests') {
+        stage('execute tests - NOT WORKING!') {
             steps {
                 sh '''
                 pip3 install -r requirements.txt
+                ./buildrun.sh
                 python3 lbg.test.py
                 '''
             }
