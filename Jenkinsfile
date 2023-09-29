@@ -12,8 +12,8 @@ pipeline {
         stage('build docker image') {
             steps {
                 sh '''
-                docker build -t maxflask:latest .
-                docker build -t maxflask:${BUILD_NUMBER} .
+                docker build -t maxmcf13/maxflask:latest .
+                docker build -t maxmcf13/maxflask:${BUILD_NUMBER} .
                 '''
             }
         }
