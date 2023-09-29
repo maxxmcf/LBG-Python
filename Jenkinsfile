@@ -9,11 +9,13 @@ pipeline {
             }
         }
 
-        stage('build docker image') {
+        stage('build + push docker image') {
             steps {
                 sh '''
                 docker build -t maxmcf13/maxflask:latest .
                 docker build -t maxmcf13/maxflask:${BUILD_NUMBER} .
+                docker push maxmcf13/maxflask:latest
+                docker push maxmcf13/maxflask:${BUILD_NUMBER}
                 '''
             }
         }
