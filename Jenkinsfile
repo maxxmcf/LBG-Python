@@ -11,8 +11,7 @@ pipeline {
         stage('execute tests') {
             steps {
                 sh '''
-                python --version
-                python lbg.test.py
+                python3 lbg.test.py
                 '''
             }
         }
